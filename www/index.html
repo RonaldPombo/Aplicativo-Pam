@@ -11,15 +11,16 @@
     </script>
 </head>
 <body>
-        <label for="placa">Placa do carro</label><br>
+    <div class="placaForms">
+        <label for="placa"><h2> Placa do carro </h2></label><br>
         <input type="text" minlength="3" maxlength="3" id="placa" placeholder="ABC" required pattern="[A-Z]{3}">
             <a>-</a>
         <input type="text" minlength="4" maxlength="4" id="placa2" placeholder="A2B4" required pattern="[A-Z0-9]{4}"><br>
             <button type="button" onclick="CadastrarPlaca()" id="button1">Enviar</button>
         <p id="cadastro"></p>
-
+    </div>
     <form class="categoriaForms" id="categoriaForms">
-        <label for="categoria">Categoria</label><br>
+        <label for="categoria"><h2>Categoria</h2></label><br>
         <select id="categoria">
             <option value="Subcompacto">Subcompacto</option>
             <option value="Compacto">Compacto</option>
@@ -28,12 +29,13 @@
             <option value="SUV">SUV</option>
             <option value="Pick-Up">Pick-Up</option>
         </select>
+        <br>
         <button type="button" onclick="CadastrarCategoria()" id="button2">Enviar</button>
         <p id="cadastro2"></p>
     </form>
 
     <form class="horasForms" id="horasForms" onsubmit="return false">
-        <label for="horas">Quantas horas deseja comprar?</label><br>
+        <label for="horas"><h2>Quantas horas deseja comprar?</h2></label><br>
         <input type="text" minlength="1" maxlength="1" id="horas" placeholder="Horas" required pattern="[1-3]{1}">
         <button type="button" onclick="ComprarHoras()" id="button3">Enviar</button>
         <p id="comprar"></p>
