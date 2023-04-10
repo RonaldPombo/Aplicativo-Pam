@@ -1,2 +1,14 @@
-/**/
-
+.placaForms{
+}
+.categoriaForms{
+    opacity: 0%;
+}
+.horasForms{
+    opacity: 0%;
+}
+input:valid {
+  border: 1px solid green;
+}
+input:invalid {
+  border: 1px solid red;
+}

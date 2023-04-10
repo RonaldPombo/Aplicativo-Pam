@@ -7,11 +7,36 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
-    <script>
+    <script src="components/mainScript.js">
     </script>
 </head>
 <body>
-	<br />
-    This is a template for Monaca app.
+        <label for="placa">Placa do carro</label><br>
+        <input type="text" minlength="3" maxlength="3" id="placa" placeholder="ABC" required pattern="[A-Z]{3}">
+            <a>-</a>
+        <input type="text" minlength="4" maxlength="4" id="placa2" placeholder="A2B4" required pattern="[A-Z0-9]{4}"><br>
+            <button type="button" onclick="CadastrarPlaca()" id="button1">Enviar</button>
+        <p id="cadastro"></p>
+
+    <form class="categoriaForms" id="categoriaForms">
+        <label for="categoria">Categoria</label><br>
+        <select id="categoria">
+            <option value="Subcompacto">Subcompacto</option>
+            <option value="Compacto">Compacto</option>
+            <option value="Hatch">Hatch</option>
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Pick-Up">Pick-Up</option>
+        </select>
+        <button type="button" onclick="CadastrarCategoria()" id="button2">Enviar</button>
+        <p id="cadastro2"></p>
+    </form>
+
+    <form class="horasForms" id="horasForms" onsubmit="return false">
+        <label for="horas">Quantas horas deseja comprar?</label><br>
+        <input type="text" minlength="1" maxlength="1" id="horas" placeholder="Horas" required pattern="[1-3]{1}">
+        <button type="button" onclick="ComprarHoras()" id="button3">Enviar</button>
+        <p id="comprar"></p>
+    </form>
 </body>
 </html>
