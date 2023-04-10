@@ -1,4 +1,5 @@
 var valorPorHora
+var i = 1
 function CadastrarPlaca(){
     var placa = document.getElementById('placa')
     var placa2 = document.getElementById('placa2')
@@ -60,6 +61,7 @@ function CadastrarCategoria(){
 }
 function ComprarHoras(){
     var horas = document.getElementById('horas')
+    localStorage.setItem("hora1", horas.value);
     if(horas.checkValidity()){
     var valorFinal = parseFloat(horas.value) * valorPorHora
     document.getElementById("comprar").innerHTML = "O valor será R$" + valorFinal
@@ -68,4 +70,7 @@ function ComprarHoras(){
     }else{
         document.getElementById("comprar").innerHTML = "Alguma informação está errada, tente novamente"
     }
+}
+function userHtml(){
+    window.location.replace("user.html")
 }
