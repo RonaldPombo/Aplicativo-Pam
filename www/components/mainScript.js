@@ -3,19 +3,22 @@ var i = 1
 function CadastrarPlaca(){
     var placa = document.getElementById('placa')
     var placa2 = document.getElementById('placa2')
-    localStorage.setItem("placa", placa.value + "-" + placa2.value);
+    localStorage.setItem("placa", (placa.value).toUpperCase() + "-" + (placa2.value).toUpperCase());
     if(placa.checkValidity()){
         if(placa2.checkValidity()){
-            document.getElementById("cadastro").innerHTML = "Placa " + placa.value + " - "  + placa2.value + " cadastrada."
+            document.getElementById("comprar").style.marginLeft="-8vw";
+            document.getElementById("cadastro").innerHTML = "Placa " + (placa.value).toUpperCase() + " - "  + (placa2.value).toUpperCase() + " cadastrada."
             document.getElementById("categoriaForms").style.opacity="100%"
             document.getElementById("placa").disabled = true
             document.getElementById("placa2").disabled = true
             document.getElementById("button1").disabled = true
         }else{
-        document.getElementById("cadastro").innerHTML = "Alguma informação está errada, tente novamente"
+        document.getElementById("cadastro").style.marginLeft="-9vw";
+        document.getElementById("cadastro").innerHTML = "Alguma informação está errada, <br>tente novamente."
         }
     }else{
-        document.getElementById("cadastro").innerHTML = "Alguma informação está errada, tente novamente"
+        document.getElementById("cadastro").style.marginLeft="-9vw";
+        document.getElementById("cadastro").innerHTML = "Alguma informação está errada,<br>tente novamente."
     }
 }
 function CadastrarCategoria(){
@@ -66,12 +69,14 @@ function ComprarHoras(){
     localStorage.setItem("hora", horas.value);
     if(horas.checkValidity()){
     var valorFinal = parseFloat(horas.value) * valorPorHora
+    document.getElementById("comprar").style.marginLeft="24vw";
     document.getElementById("comprar").innerHTML = "O valor será R$" + valorFinal
         document.getElementById("horas").disabled = true
         document.getElementById("button3").disabled = true
         document.getElementById("button4").style.display = "inline"
     }else{
-        document.getElementById("comprar").innerHTML = "Alguma informação está errada, tente novamente"
+        document.getElementById("comprar").style.marginLeft="10vw";
+        document.getElementById("comprar").innerHTML = "Alguma informação está errada,<br>tente novamente."
     }
 }
 function userHtml(){

@@ -13,9 +13,9 @@
 <body>
     <div class="placaForms">
         <label for="placa"><h2> Placa do carro </h2></label><br>
-        <input type="text" minlength="3" maxlength="3" id="placa" placeholder="ABC" required pattern="[A-Z]{3}">
+        <input type="text" minlength="3" maxlength="3" id="placa" placeholder="ABC" required pattern="[A-Za-z]{3}">
             <a>-</a>
-        <input type="text" minlength="4" maxlength="4" id="placa2" placeholder="A2B4" required pattern="[A-Z0-9]{4}"><br>
+        <input type="text" minlength="4" maxlength="4" id="placa2" placeholder="A2B4" required pattern="[A-Za-z0-9]{4}"><br>
             <button type="button" onclick="CadastrarPlaca()" id="button1">Enviar</button>
         <p id="cadastro"></p>
     </div>
