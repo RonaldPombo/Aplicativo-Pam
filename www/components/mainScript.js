@@ -3,6 +3,7 @@ var i = 1
 function CadastrarPlaca(){
     var placa = document.getElementById('placa')
     var placa2 = document.getElementById('placa2')
+    localStorage.setItem("placa", placa.value + "-" + placa2.value);
     if(placa.checkValidity()){
         if(placa2.checkValidity()){
             document.getElementById("cadastro").innerHTML = "Placa " + placa.value + " - "  + placa2.value + " cadastrada."
@@ -19,6 +20,7 @@ function CadastrarPlaca(){
 }
 function CadastrarCategoria(){
     var categoria = document.getElementById('categoria').value
+    localStorage.setItem("categoria", categoria);
     if(categoria == "Subcompacto"){
         document.getElementById("cadastro2").innerHTML = "Categoria selecionada: " + categoria
         valorPorHora = 3.5
@@ -61,12 +63,13 @@ function CadastrarCategoria(){
 }
 function ComprarHoras(){
     var horas = document.getElementById('horas')
-    localStorage.setItem("hora1", horas.value);
+    localStorage.setItem("hora", horas.value);
     if(horas.checkValidity()){
     var valorFinal = parseFloat(horas.value) * valorPorHora
     document.getElementById("comprar").innerHTML = "O valor será R$" + valorFinal
         document.getElementById("horas").disabled = true
         document.getElementById("button3").disabled = true
+        document.getElementById("button4").style.display = "inline"
     }else{
         document.getElementById("comprar").innerHTML = "Alguma informação está errada, tente novamente"
     }
